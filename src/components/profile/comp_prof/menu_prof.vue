@@ -89,19 +89,27 @@ export default {
             else if (selectedItem.id === 4) {
                 this.reset_pass();
             }
+            else if (selectedItem.id === 2) {
+                this.current_orders();
+            }
+            else if (selectedItem.id === 5) {
+                this.order_history();
+            }
         },
         logout() {
             console.log("Logging out...");
-
             localStorage.removeItem('token');
-
-
             window.location.href = "/login";
         },
         reset_pass() {
             window.location.href = "/reset_pas";
         },
-
+        current_orders() {
+            this.$router.push('/current_orders');
+        },
+        order_history() {
+            this.$router.push('/order_history');
+        }
     },
 };
 </script>

@@ -25,7 +25,7 @@ export default {
                 },
                 {
                     id: 2,
-                    text: "Поточні замовлення",
+                    text: "Управління замовленнями",
                     hover: false,
                     active: false
                 },
@@ -47,8 +47,6 @@ export default {
                     hover: false,
                     active: false
                 },
-                
-                
             ],
         };
     },
@@ -66,14 +64,14 @@ export default {
             else if (selectedItem.id === 4){
                 this.addadmin();
             }
-            
+            else if (selectedItem.id === 2){
+                this.manageOrders();
+            }
         },
         logout() {
             console.log("Logging out...");
-
             localStorage.removeItem('token'); 
             localStorage.removeItem('role');
-
             window.location.href = "/login";
         },
         addgoods(){
@@ -81,6 +79,9 @@ export default {
         },
         addadmin(){
             window.location.href = "/add_admin";
+        },
+        manageOrders(){
+            this.$router.push('/admin_orders');
         }
     },
 };

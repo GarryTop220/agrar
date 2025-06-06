@@ -17,8 +17,10 @@ import Fyngicidu from '@/components/goods/Fyngicudu.vue';
 import Desicantu from '@/components/goods/Desukantu.vue';
 import Add_goods from '@/components/profil_admin/pages_admin/add_goods.vue';
 import Add_admin from '@/components/profil_admin/pages_admin/add_admin.vue';
-import Reset_pas from '@/components/profile/profil-pages/unlock.vue'
-
+import Admin_orders from '@/components/profil_admin/pages_admin/admin_orders.vue';
+import Reset_pas from '@/components/profile/profil-pages/unlock.vue';
+import Current_orders from '@/components/profile/profil-pages/order.vue';
+import Order_history from '@/components/profile/profil-pages/history.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -36,9 +38,12 @@ const routes = [
   { path: '/rodenticidu', name: 'Rodenticidu', component: Rodenticidu },
   { path: '/retardantu', name: 'Retandantu', component: Retandantu },
   { path: '/add_goods', name: 'Add_goods', component: Add_goods, meta: { requiresAuth: true } },
-  { path: '/add_admin', name: 'Add_admin', component: Add_admin },
+  { path: '/add_admin', name: 'Add_admin', component: Add_admin, meta: { requiresAuth: true } },
+  { path: '/admin_orders', name: 'Admin_orders', component: Admin_orders, meta: { requiresAuth: true } },
   { path: '/shopping_cart', name: 'Shopping_cart', component: Shopping_cart, meta: { requiresAuth: true } },
-  { path: '/reset_pas', name: 'Reset_pas', component: Reset_pas },
+  { path: '/reset_pas', name: 'Reset_pas', component: Reset_pas, meta: { requiresAuth: true } },
+  { path: '/current_orders', name: 'Current_orders', component: Current_orders, meta: { requiresAuth: true } },
+  { path: '/order_history', name: 'Order_history', component: Order_history, meta: { requiresAuth: true } },
 ];
 
 const router = createRouter({
